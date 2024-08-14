@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="book-image-container">
+    <img src="{{ url_for('static', filename='images/undraw_book_reading_re_fu2c.svg') }}" alt="Book Reading" class="book-image">
+</div>
+<h2>Book List</h2>
+<ul>
+{% for book in books %}
+    <li>
+        {{ book.title }} by {{ book.author }}
+        <a href="{{ url_for('books.edit_book', id=book.id) }}">Edit</a>
+        <a href="{{ url_for('books.delete_book', id=book.id) }}">Delete</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

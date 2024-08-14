@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Welcome to the Digital Library</h1>
+    <p>This is a place where you can manage your book collection.</p>
+    <div class="main-image-container">
+        <img src="{{ url_for('static', filename='images/berks.jpg') }}" alt="Library" class="main-image">
+    </div>
+{% endblock %}
